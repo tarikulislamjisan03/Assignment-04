@@ -38,7 +38,7 @@ function updateCounters() {
 }
 
 
-// no job available msg
+// no job available interface
 function toggleNoJobsMessage(visibleCount) {
 
     const message = document.getElementById("noJobsMessage");
