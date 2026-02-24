@@ -25,7 +25,7 @@ function filterCards(type) {
     toggleNoJobsMessage(visibleCount);
 }
 
-
+// updatee counter seection
 function updateCounters() {
 
     const total = document.querySelectorAll(".job-card").length;
