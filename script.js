@@ -87,25 +87,40 @@ document.querySelectorAll(".reject-btn").forEach(btn => {
 updateCounters();
 filterCards("all");
 
+
+
+
+
 //  deleting card process
 
-const deleteButtons = document.querySelectorAll(".delete-btn");
-for(let dltbtn of deleteButtons){
+function deleteJob(button) {
+
+    // take the main id from the button
+    const card = button.parentElement;
+
+    // 
+    // take the status from the card
+    const status = card.querySelector('.status-btn').innerText;
+
+    //  Decrease the main count
+    const totalTags = document.querySelectorAll('.totalcount');
+    totalTags.forEach(tag => {
+        tag.innerText = parseInt(tag.innerText) - 1;
+    });
+
+    //  // if status is Interview then decrease Interview count
+    if (status === "Interview") {
+        const interviewTag = document.getElementById('interviewcount');
+        interviewTag.innerText = parseInt(interviewTag.innerText) - 1;
+    }
+
     
-    dltbtn.addEventListener("click",function(e){
-       
-      const card=e.currentTarget.parentNode
+    // if status is rejected then decrease reject count
+    if (status === "Rejected") {
+        const rejectedTag = document.getElementById('rejectedcount');
+        rejectedTag.innerText = parseInt(rejectedTag.innerText) - 1;
+    }
 
-
-const totalcountDisplay=document.querySelectorAll(".totalcount")
-for(let totalcount of totalcountDisplay){
-    console.log(totalcount)
-    let totalnumber=parseInt(totalcount.innerText)
-   totalnumber=totalnumber-1
-   totalcount.innerText=totalnumber
-}
-
-
-      card.remove()
-    })
+    // at last delete the card from the display
+    card.remove();
 }
