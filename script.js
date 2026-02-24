@@ -87,7 +87,7 @@ document.querySelectorAll(".reject-btn").forEach(btn => {
 updateCounters();
 filterCards("all");
 
-// delete card
+//  deleting card process
 
 const deleteButtons = document.querySelectorAll(".delete-btn");
 for(let dltbtn of deleteButtons){
